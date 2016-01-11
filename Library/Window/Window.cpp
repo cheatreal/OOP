@@ -1,6 +1,8 @@
 #include "Window.h"
+#include "C:\Users\Tonix\Documents\Visual Studio 2015\Projects\Hook\Hook\Hook.h"
 #include <thread>
 #include <iostream>
+#include <fstream>
 
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
 
@@ -40,6 +42,8 @@ int APIENTRY Window::WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR
 
 	return (int)Message.wParam;
 }
+/**/
+
 
 LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 {
@@ -48,7 +52,10 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 		PostQuitMessage(0);
 		return 0;
 	case WM_LBUTTONDOWN:
+
 		MessageBoxA(NULL, "Click!", "Info", MB_OK);
+		
+		
 	}
 	return(DefWindowProc(hWnd, iMessage, wParam, lParam));
 }
