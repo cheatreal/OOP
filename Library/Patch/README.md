@@ -2,35 +2,34 @@
 
    char* DllName
       
-      - DllName  : DLL ÀÌ¸§
+      - DllName  : DLL ì´ë¦„
 
    char* ProcName
 
-      - ProcName : ÇÁ·Î¼¼½º ÀÌ¸§
+      - ProcName : í”„ë¡œì„¸ìŠ¤ ì´ë¦„
    
 #CONSTRUCTOR
    
    Patch(char* ProcName, char* DllName)
 
-      - ProcName : ÇÁ·Î¼¼½º ÀÌ¸§
-      - DllName  : DLL ÀÌ¸§
+      - ProcName : í”„ë¡œì„¸ìŠ¤ ì´ë¦„
+      - DllName  : DLL ì´ë¦„
   
 #FUNCTION
 
    DWORD GetProcessId() 
 
-      - Result   : ÇÁ·Î¼¼½º ¾ÆÀÌµð
+      - Result   : í”„ë¡œì„¸ìŠ¤ ì•„ì´ë””
 
    DWORD GetDllBase(DWORD pid)
 
-      - pid	 : ÇÁ·Î¼¼½º ¾ÆÀÌµð
-      - Result   : Dll º£ÀÌ½º°ª
+      - pid	 : í”„ë¡œì„¸ìŠ¤ ì•„ì´ë””
+      - Result   : Dll ë² ì´ìŠ¤ê°’
 
-   BOOL PatchCode(HANDLE hProc, DWORD Base, DWORD offset, LPCVOID opcode, DWORD bytes, PBYTE pOrgBytes)
+   BOOL PatchCode(HANDLE hProc, DWORD Base, DWORD offset, LPCVOID opcode, DWORD bytes)
 
-      - hProc    : ÇÁ·Î¼¼½º ÇÚµé
-      - Base     : DLL º£ÀÌ½º°ª
-      - offset   : DLL ¿ÀÇÁ¼Â
-      - opcode   : ÆÐÄ¡ÇÒ ÄÚµå
-      - bytes    : ÆÐÄ¡ÇÒ ±æÀÌ
-      - pOrgBytes: ¿ø·¡ ÄÚµå ÀúÀå
+      - hProc    : í”„ë¡œì„¸ìŠ¤ í•¸ë“¤
+      - Base     : DLL ë² ì´ìŠ¤ê°’
+      - offset   : DLL ì˜¤í”„ì…‹
+      - opcode   : íŒ¨ì¹˜í•  ì½”ë“œ
+      - bytes    : íŒ¨ì¹˜í•  ê¸¸ì´
