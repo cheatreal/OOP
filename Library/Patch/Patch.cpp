@@ -64,18 +64,14 @@ DWORD Patch::GetDllBase(DWORD pid)
 
 }
 
-BOOL Patch::PatchCode(HANDLE hProc, DWORD Base, DWORD offset,LPCVOID opcode, DWORD bytes, PBYTE pOrgBytes)
+BOOL Patch::PatchCode(HANDLE hProc, DWORD Base, DWORD offset,LPCVOID opcode, DWORD bytes)
 {
 	DWORD result;
-	 
-	// 원래 코드 
-	//memcpy(pOrgBytes, Base+offset, bytes);
-
 
 	WriteProcessMemory(hProc, reinterpret_cast<LPVOID>(Base  + offset),(LPCVOID)opcode, bytes, &result);
 	if (result == 0)
 	{
-		return false;
+		return true;
 	}
-	return true;
+	return false;
 }
